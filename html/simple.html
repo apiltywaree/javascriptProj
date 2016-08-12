@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" type="text/css" href="../node_modules/jquery-ui-1.12.0/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css"/>-->
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+    <title>Registration</title>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="simple.html">Home</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="https://www.youtube.com/">Youtube <span class="sr-only">(current)</span></a>
+                </li>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container" style="width: 400px;">
+
+    <form id="userSign" class="form-signin">
+        <h3 align="center">Welcome to Lipanjan Store</h3>
+        <h5 align="center">Don't have account, click on sign up</h5>
+        <span id="inputError"></span>
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          <label>
+            <a id="export" class="myButton" download="apil.txt" href="#">Save</a>
+              </label>
+        </div>
+
+
+            <button class="btn btn-lg btn-primary btn-block" id="signsubmit" type="submit">
+                Sign in
+            </button>
+
+
+        <button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#myModal">
+            Sign up
+        </button>
+    </form>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Welcome to the Store</h4>
+            </div>
+            <div class="modal-body">
+                <form action="thankyou.html" id="myform" method="POST">
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label for='FirstName'>First
+                                    Name:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="fnameError"></span></div>
+                                <div class="col-md-4"><input onclick="myFunction();" type="text" maxlength="20"
+                                                             size="20" id="FirstName"
+                                                             name="FirstName"/><br/></div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label for='LastName'>Last
+                                    Name:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="lnameError"></span></label></div>
+                                <div class="col-md-4"><input onclick="myFunction();" type="text" maxlength="20"
+                                                             size="20" id="LastName"
+                                                             name="LastName"/></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label for='dob'>Date of
+                                    Birth:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="dobError"></span></label></div>
+                                <div class="col-md-4"><input onclick="myFunction();" type="text" id="dob"
+                                                             name="dob"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label
+                                        for='Email'>Email:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="emailError"></span></label></div>
+                                <div class="col-md-4"><input onclick="myFunction();" type="email" id="Email"
+                                                             maxlength="40" name="Email"/></div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label
+                                        for='Phone'>Phone:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="phoneError"></span></label></div>
+                                <div class="col-md-4"><input onclick="myFunction();" type="number" id="Phone"
+                                                             name="Phone"/></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label
+                                        for='Address'>Address:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="addressError"></span></label></div>
+                                <div class="col-md-4"><textarea onclick="myFunction();" cols="18" rows="4"
+                                                                maxlength="100" id="Address"
+                                                                name="Address"></textarea></div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-md-4"><label
+                                        for='Country'>Country:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</label><span
+                                        id="countryError"></span></label></div>
+                                <div class="col-md-4"><select id="Country" name="Country">
+                                    <option value="none" onclick="myFunction();" selected="selected">select your
+                                        country
+                                    </option>
+                                    <option value="Nepal">Nepal</option>
+                                    <option value="USA">USA</option>
+                                </select></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id='submit' value="Submit" onclick="validate();">
+                    Submit
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="dialog" title="Errror in Memory"></div>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/jquery-ui-1.12.0/jquery-ui.js"></script>
+<script src="../node_modules/bootstrap/js/modal.js"></script>
+<script src="../node_modules/bootstrap/js/dropdown.js"></script>
+<script src="../js/login.js"></script>
+
+<!--<script src="node_modules/jquery-ui/ui/widgets/datepicker.js"></script>-->
+<script src="../js/linkedlist.js"></script>
+<script src="../js/check.js"></script>
+
+</body>
+
+
+</html>
